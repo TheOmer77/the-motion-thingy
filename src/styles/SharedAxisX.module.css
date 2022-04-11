@@ -1,0 +1,47 @@
+.sharedAxisX {
+  position: relative;
+}
+
+.sharedAxisX-item-enter {
+  opacity: 0;
+}
+
+.sharedAxisX-item-enter-back {
+  transform: translateX(-30px);
+}
+
+.sharedAxisX-item-enter-forward {
+  transform: translateX(30px);
+}
+
+.sharedAxisX-item-enter-active {
+  opacity: 1;
+  transition: opacity 210ms cubic-bezier(0, 0.8, 0, 1) 90ms,
+    transform cubic-bezier(0, 0.8, 0.4, 1) 300ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+}
+
+.sharedAxisX-item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sharedAxisX-item-exit-active {
+  opacity: 0;
+  transition: opacity 90ms cubic-bezier(0, 0, 0.4, 1),
+    transform cubic-bezier(0, 0.8, 0.4, 1) 300ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sharedAxisX-item-exit-active-forward {
+  transform: translateX(-30px);
+}
+
+.sharedAxisX-item-exit-active-back {
+  transform: translateX(30px);
+}
