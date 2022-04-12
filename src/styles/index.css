@@ -21,7 +21,7 @@ body {
 }
 
 .item {
-  background-color: rgba(39, 39, 207, 0.5);
+  background-color: #2929d6;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -44,4 +44,11 @@ body {
 .counter button {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .item {
+    background-color: #9494eb;
+    color: #14146b;
+  }
 }
