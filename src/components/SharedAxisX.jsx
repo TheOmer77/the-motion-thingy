@@ -17,10 +17,6 @@ const SharedAxisX = ({ step = 0, children, className, ...props }) => {
   const items = Array.isArray(children) ? children : [children];
 
   const getDirection = useCallback(
-    /**
-     * @param {number} step
-     * @param {number} prevStep
-     */
     () => (step > prevStep ? 'forward' : 'back'),
     [step, prevStep]
   );
