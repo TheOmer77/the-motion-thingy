@@ -1,4 +1,4 @@
-import { useRef, useCallback, cloneElement } from 'react';
+import { useRef, cloneElement } from 'react';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 
