@@ -37,7 +37,7 @@ const App = () => {
         >
           -
         </button>
-        <span>{step}</span>
+        <span className='number'>{step}</span>
         <button
           disabled={step >= steps.length - 1}
           onClick={() => setStep((prev) => prev + 1)}
