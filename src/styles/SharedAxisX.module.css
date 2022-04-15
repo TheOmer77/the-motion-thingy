@@ -17,7 +17,7 @@
 .sharedAxisX-item-enter-active {
   opacity: 1;
   transition: opacity 210ms cubic-bezier(0, 0, 0.2, 1) 90ms,
-    transform 300ms cubic-bezier(0.6, 0, 0.2, 1);
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   position: absolute;
   top: 0;
@@ -32,8 +32,8 @@
 
 .sharedAxisX-item-exit-active {
   opacity: 0;
-  transition: opacity 90ms cubic-bezier(0.6, 0, 1, 1),
-    transform 300ms cubic-bezier(0.6, 0, 0.2, 1);
+  transition: opacity 90ms cubic-bezier(0.4, 0, 1, 1),
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   position: absolute;
   top: 0;
