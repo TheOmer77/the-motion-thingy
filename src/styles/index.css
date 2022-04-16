@@ -159,7 +159,7 @@ button:focus-visible {
     --color-primary-btn-hover: rgba(148, 148, 235, 0.325);
     --color-primary-btn-active: rgba(148, 148, 235, 0.5);
     --color-primary-btn-disabled: rgba(255, 255, 255, 0.125);
-    --color-accent: hsl(281, 76%, 80%);
+    --color-accent: #daa6f2;
     --color-accent-dark: #621287;
   }
 

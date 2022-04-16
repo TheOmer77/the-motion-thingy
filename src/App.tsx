@@ -70,7 +70,7 @@ const App = () => {
             +
           </button>
         </div>
-        <div className='control-line'>
+        <div className='control-line gap-0.5'>
           <span className='title'>Axis:</span>
           <div className='button-group'>
             {axisValues.map(({ label, value }) => (
