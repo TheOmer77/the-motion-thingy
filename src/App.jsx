@@ -51,7 +51,7 @@ const App = () => {
         >
           -
         </button>
-        <span className='counter'>{step}</span>
+        <span className='counter title'>{step}</span>
         <button
           disabled={step >= steps.length - 1}
           onClick={() => setStep((prev) => prev + 1)}
@@ -60,16 +60,18 @@ const App = () => {
         </button>
       </div>
       <div className='control-line'>
-        <span>Axis:</span>
-        {axisValues.map(({ label, value }) => (
-          <button
-            key={value}
-            onClick={() => setAxis(value)}
-            aria-pressed={axis === value}
-          >
-            {label}
-          </button>
-        ))}
+        <span className='title'>Axis:</span>
+        <div className='button-group'>
+          {axisValues.map(({ label, value }) => (
+            <button
+              key={value}
+              onClick={() => setAxis(value)}
+              aria-pressed={axis === value}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
     </>
   );

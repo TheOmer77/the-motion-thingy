@@ -66,10 +66,20 @@ body {
   gap: 1rem;
 }
 
-.control-line > .counter {
+.control-line > .title {
   font-weight: 500;
+}
+
+.control-line > .counter {
   width: 1rem;
   text-align: center;
+}
+
+.control-line > .button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.0625rem;
 }
 
 button {
@@ -104,6 +114,20 @@ button:disabled {
 button:focus-visible {
   outline: none;
   box-shadow: 0 0 0 0.1875rem var(--color-primary);
+}
+
+.control-line > .button-group > button:first-of-type {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.control-line > .button-group > button:last-of-type {
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
+}
+
+.control-line > .button-group > button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 0;
 }
 
 @media (prefers-color-scheme: dark) {
