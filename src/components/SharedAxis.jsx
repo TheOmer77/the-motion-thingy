@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import classNames from 'classnames';
 
 import usePrevious from '../hooks/usePrevious';
+import SharedAxisContext from '../contexts/SharedAxisContext';
 import SharedAxisItem from './SharedAxisItem';
 
 import classes from '../styles/SharedAxis.module.css';
@@ -33,22 +34,22 @@ const SharedAxis = ({
   );
 
   return (
-    <div
-      {...props}
-      className={classNames(classes['sharedAxis-container'], className)}
-    >
-      {items.map((child, index) => (
-        <SharedAxisItem
-          axis={axis}
-          fadeVariant={fadeVariant}
-          direction={getDirection()}
-          key={`sharedAxis-step-${index}`}
-          in={step === index}
-        >
-          {child}
-        </SharedAxisItem>
-      ))}
-    </div>
+    <SharedAxisContext.Provider value={{ step, axis, fadeVariant }}>
+      <div
+        {...props}
+        className={classNames(classes['sharedAxis-container'], className)}
+      >
+        {items.map((child, index) => (
+          <SharedAxisItem
+            key={`sharedAxis-step-${index}`}
+            index={index}
+            direction={getDirection()}
+          >
+            {child}
+          </SharedAxisItem>
+        ))}
+      </div>
+    </SharedAxisContext.Provider>
   );
 };
 

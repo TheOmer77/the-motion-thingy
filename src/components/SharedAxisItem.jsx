@@ -2,29 +2,24 @@ import { useRef, cloneElement } from 'react';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 
+import useSharedAxis from '../hooks/useSharedAxis';
+
 import classes from '../styles/SharedAxis.module.css';
 
 /**
  * @param {{
- *  axis: import('./SharedAxis').Axis;
- *  fadeVariant?: boolean;
+ *  index: number;
  *  direction: 'back' | 'forward';
- *  in: boolean;
  *  children: import('react').ReactNode;
  * }} props
  */
-const SharedAxisItem = ({
-  axis = 'x',
-  fadeVariant = false,
-  direction = 'forward',
-  in: active,
-  children,
-}) => {
+const SharedAxisItem = ({ index, direction = 'forward', children }) => {
+  const { step, axis, fadeVariant } = useSharedAxis();
   const ref = useRef(null);
 
   return (
     <CSSTransition
-      in={active}
+      in={step === index}
       nodeRef={ref}
       classNames={{
         enter: classNames(
