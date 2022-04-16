@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import SharedAxis from './components/SharedAxis';
+import { Axis } from './types/SharedAxis';
 
 const steps = [
   <div key={0} className='item'>
@@ -20,13 +21,7 @@ const steps = [
   </div>,
 ];
 
-/**
- * @type {{
- *  label: string;
- *  value: import('./components/SharedAxis').Axis;
- * }[]}
- */
-const axisValues = [
+const axisValues: { label: string; value: Axis }[] = [
   { label: 'X', value: 'x' },
   { label: 'Y', value: 'y' },
   { label: 'Z', value: 'z' },
@@ -34,8 +29,7 @@ const axisValues = [
 
 const App = () => {
   const [step, setStep] = useState(0),
-    /** @type {[import('./components/SharedAxis').Axis, React.Dispatch<React.SetStateAction<import('./components/SharedAxis').Axis>>]} */
-    [axis, setAxis] = useState('x'),
+    [axis, setAxis] = useState<Axis>('x'),
     [fadeVariant, setFadeVariant] = useState(false);
 
   return (

@@ -1,0 +1,22 @@
+declare const styles: {
+  readonly 'sharedAxis-container': string;
+  readonly 'sharedAxis-item-enter': string;
+  readonly 'sharedAxis-item-enter-x-back': string;
+  readonly 'sharedAxis-item-enter-x-forward': string;
+  readonly 'sharedAxis-item-enter-y-back': string;
+  readonly 'sharedAxis-item-enter-y-forward': string;
+  readonly 'sharedAxis-item-enter-z-back': string;
+  readonly 'sharedAxis-item-enter-z-forward': string;
+  readonly 'sharedAxis-item-enter-fade-back': string;
+  readonly 'sharedAxis-item-enter-active': string;
+  readonly 'sharedAxis-item-exit': string;
+  readonly 'sharedAxis-item-exit-active': string;
+  readonly 'sharedAxis-item-exit-active-x-forward': string;
+  readonly 'sharedAxis-item-exit-active-x-back': string;
+  readonly 'sharedAxis-item-exit-active-y-forward': string;
+  readonly 'sharedAxis-item-exit-active-y-back': string;
+  readonly 'sharedAxis-item-exit-active-z-forward': string;
+  readonly 'sharedAxis-item-exit-active-z-back': string;
+  readonly 'sharedAxis-item-exit-active-fade-forward': string;
+};
+export = styles;

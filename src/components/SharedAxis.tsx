@@ -5,17 +5,10 @@ import usePrevious from '../hooks/usePrevious';
 import SharedAxisContext from '../contexts/SharedAxisContext';
 import SharedAxisItem from './SharedAxisItem';
 
+import { SharedAxisProps } from '../types/SharedAxis';
+
 import classes from '../styles/SharedAxis.module.css';
 
-/** @typedef {'x' | 'y' | 'z'} Axis */
-
-/**
- * @param {{
- *  step: number;
- *  axis: Axis;
- *  fadeVariant?: boolean;
- * } & import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>} props
- */
 const SharedAxis = ({
   step = 0,
   axis = 'x',
@@ -23,13 +16,13 @@ const SharedAxis = ({
   children,
   className,
   ...props
-}) => {
+}: SharedAxisProps) => {
   const prevStep = usePrevious(step);
 
   const items = Array.isArray(children) ? children : [children];
 
   const getDirection = useCallback(
-    () => (step > prevStep ? 'forward' : 'back'),
+    () => (step > (prevStep || 0) ? 'forward' : 'back'),
     [step, prevStep]
   );
 
