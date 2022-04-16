@@ -30,6 +30,10 @@
   transform: scale(0.8);
 }
 
+.sharedAxis-item-enter-fade-back {
+  opacity: 1;
+}
+
 .sharedAxis-item-enter-active {
   opacity: 1;
   transition: opacity 210ms cubic-bezier(0, 0, 0.2, 1) 90ms,
@@ -78,4 +82,8 @@
 
 .sharedAxis-item-exit-active-z-back {
   transform: scale(0.8);
+}
+
+.sharedAxis-item-exit-active-fade-forward {
+  opacity: 1;
 }

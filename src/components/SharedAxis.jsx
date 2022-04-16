@@ -10,13 +10,15 @@ import classes from '../styles/SharedAxis.module.css';
 
 /**
  * @param {{
- *  axis: Axis;
  *  step: number;
+ *  axis: Axis;
+ *  fadeVariant?: boolean;
  * } & import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>} props
  */
 const SharedAxis = ({
-  axis = 'x',
   step = 0,
+  axis = 'x',
+  fadeVariant = false,
   children,
   className,
   ...props
@@ -38,6 +40,7 @@ const SharedAxis = ({
       {items.map((child, index) => (
         <SharedAxisItem
           axis={axis}
+          fadeVariant={fadeVariant}
           direction={getDirection()}
           key={`sharedAxis-step-${index}`}
           in={step === index}
