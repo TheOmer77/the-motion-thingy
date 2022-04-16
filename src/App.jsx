@@ -50,44 +50,56 @@ const App = () => {
           {steps}
         </SharedAxis>
       </div>
-      <div className='control-line'>
-        <button
-          disabled={step <= 0}
-          onClick={() => setStep((prev) => prev - 1)}
-        >
-          -
-        </button>
-        <span className='counter title'>{step}</span>
-        <button
-          disabled={step >= steps.length - 1}
-          onClick={() => setStep((prev) => prev + 1)}
-        >
-          +
-        </button>
-      </div>
-      <div className='control-line'>
-        <span className='title'>Axis:</span>
-        <div className='button-group'>
-          {axisValues.map(({ label, value }) => (
-            <button
-              key={value}
-              onClick={() => setAxis(value)}
-              aria-pressed={axis === value}
-            >
-              {label}
-            </button>
-          ))}
+      <div className='control-column'>
+        <div className='control-line gap-0.5'>
+          <button
+            disabled={step <= 0}
+            onClick={() => setStep((prev) => prev - 1)}
+          >
+            -
+          </button>
+          <div className='button-group'>
+            {steps.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setStep(index)}
+                aria-pressed={step === index}
+              >
+                {index}
+              </button>
+            ))}
+          </div>
+          <button
+            disabled={step >= steps.length - 1}
+            onClick={() => setStep((prev) => prev + 1)}
+          >
+            +
+          </button>
         </div>
-      </div>
-      <div className='control-line gap-0.5'>
-        <button
-          className='small'
-          aria-pressed={fadeVariant}
-          onClick={() => setFadeVariant((prev) => !prev)}
-        >
-          {fadeVariant ? '✓' : ' '}
-        </button>
-        <span className='title'>Fade variant</span>
+        <div className='control-line'>
+          <span className='title'>Axis:</span>
+          <div className='button-group'>
+            {axisValues.map(({ label, value }) => (
+              <button
+                key={value}
+                onClick={() => setAxis(value)}
+                aria-pressed={axis === value}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className='control-line gap-0.5'>
+          <button
+            className='small'
+            aria-pressed={fadeVariant}
+            onClick={() => setFadeVariant((prev) => !prev)}
+          >
+            {fadeVariant ? '✓' : ' '}
+          </button>
+          <span className='title'>Fade variant</span>
+        </div>
       </div>
     </>
   );

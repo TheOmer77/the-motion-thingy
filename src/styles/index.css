@@ -59,6 +59,13 @@ body {
   height: 100%;
 }
 
+.control-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .control-line {
   display: flex;
   flex-direction: row;
@@ -72,11 +79,6 @@ body {
 
 .control-line > .title {
   font-weight: 500;
-}
-
-.control-line > .counter {
-  width: 1rem;
-  text-align: center;
 }
 
 .control-line > .button-group {
