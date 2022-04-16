@@ -3,6 +3,9 @@ import { useState } from 'react';
 import SharedAxis from './components/SharedAxis';
 
 const steps = [
+  <div key={0} className='item'>
+    0
+  </div>,
   <div key={1} className='item'>
     1
   </div>,
@@ -14,9 +17,6 @@ const steps = [
   </div>,
   <div key={4} className='item'>
     4
-  </div>,
-  <div key={5} className='item'>
-    5
   </div>,
 ];
 
