@@ -4,14 +4,21 @@ import classNames from 'classnames';
 import usePrevious from '../hooks/usePrevious';
 import SharedAxisItem from './SharedAxisItem';
 
-import classes from '../styles/SharedAxisX.module.css';
+import classes from '../styles/SharedAxis.module.css';
 
 /**
  * @param {{
+ *  axis: 'x' | 'y' | 'z';
  *  step: number;
  * } & import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>} props
  */
-const SharedAxisX = ({ step = 0, children, className, ...props }) => {
+const SharedAxis = ({
+  axis = 'x',
+  step = 0,
+  children,
+  className,
+  ...props
+}) => {
   const prevStep = usePrevious(step);
 
   const items = Array.isArray(children) ? children : [children];
@@ -22,12 +29,15 @@ const SharedAxisX = ({ step = 0, children, className, ...props }) => {
   );
 
   return (
-    <div {...props} className={classNames(classes['sharedAxisX'], className)}>
+    <div
+      {...props}
+      className={classNames(classes['sharedAxis-container'], className)}
+    >
       {items.map((child, index) => (
         <SharedAxisItem
-          axis='x'
+          axis={axis}
           direction={getDirection()}
-          key={`sharedAxisX-step-${index}`}
+          key={`sharedAxis-step-${index}`}
           in={step === index}
         >
           {child}
@@ -37,4 +47,4 @@ const SharedAxisX = ({ step = 0, children, className, ...props }) => {
   );
 };
 
-export default SharedAxisX;
+export default SharedAxis;

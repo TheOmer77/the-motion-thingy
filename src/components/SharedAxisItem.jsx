@@ -2,7 +2,7 @@ import { useRef, cloneElement } from 'react';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 
-import classes from '../styles/SharedAxisX.module.css';
+import classes from '../styles/SharedAxis.module.css';
 
 /**
  * @param {{
@@ -26,17 +26,14 @@ const SharedAxisItem = ({
       nodeRef={ref}
       classNames={{
         enter: classNames(
-          classes[`sharedAxis${axis.toUpperCase()}-item-enter`],
-          classes[`sharedAxis${axis.toUpperCase()}-item-enter-${direction}`]
+          classes[`sharedAxis-item-enter`],
+          classes[`sharedAxis-item-enter-${axis}-${direction}`]
         ),
-        enterActive:
-          classes[`sharedAxis${axis.toUpperCase()}-item-enter-active`],
-        exit: classes[`sharedAxis${axis.toUpperCase()}-item-exit`],
+        enterActive: classes[`sharedAxis-item-enter-active`],
+        exit: classes[`sharedAxis-item-exit`],
         exitActive: classNames(
-          classes[`sharedAxis${axis.toUpperCase()}-item-exit-active`],
-          classes[
-            `sharedAxis${axis.toUpperCase()}-item-exit-active-${direction}`
-          ]
+          classes[`sharedAxis-item-exit-active`],
+          classes[`sharedAxis-item-exit-active-${axis}-${direction}`]
         ),
       }}
       timeout={300}

@@ -1,0 +1,65 @@
+.sharedAxis-container {
+  position: relative;
+}
+
+.sharedAxis-item-enter {
+  opacity: 0;
+}
+
+.sharedAxis-item-enter-x-back {
+  transform: translate(-30px, 0);
+}
+
+.sharedAxis-item-enter-x-forward {
+  transform: translate(30px, 0);
+}
+
+.sharedAxis-item-enter-y-back {
+  transform: translate(0, -30px);
+}
+
+.sharedAxis-item-enter-y-forward {
+  transform: translate(0, 30px);
+}
+
+.sharedAxis-item-enter-active {
+  opacity: 1;
+  transition: opacity 210ms cubic-bezier(0, 0, 0.2, 1) 90ms,
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0);
+}
+
+.sharedAxis-item-exit {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.sharedAxis-item-exit-active {
+  opacity: 0;
+  transition: opacity 90ms cubic-bezier(0.4, 0, 1, 1),
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sharedAxis-item-exit-active-x-forward {
+  transform: translate(-30px, 0);
+}
+
+.sharedAxis-item-exit-active-x-back {
+  transform: translate(30px, 0);
+}
+
+.sharedAxis-item-exit-active-y-forward {
+  transform: translate(0, -30px);
+}
+
+.sharedAxis-item-exit-active-y-back {
+  transform: translate(0, 30px);
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import SharedAxisX from './components/SharedAxisX';
+import SharedAxis from './components/SharedAxis';
 
 const steps = [
   <div key={1} className='item'>
@@ -26,9 +26,9 @@ const App = () => {
   return (
     <>
       <div>
-        <SharedAxisX step={step} className='container'>
+        <SharedAxis axis='x' step={step} className='container'>
           {steps}
-        </SharedAxisX>
+        </SharedAxis>
       </div>
       <div className='counter'>
         <button
