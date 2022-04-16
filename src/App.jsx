@@ -35,12 +35,18 @@ const axisValues = [
 const App = () => {
   const [step, setStep] = useState(0),
     /** @type {[import('./components/SharedAxis').Axis, React.Dispatch<React.SetStateAction<import('./components/SharedAxis').Axis>>]} */
-    [axis, setAxis] = useState('x');
+    [axis, setAxis] = useState('x'),
+    [fadeVariant, setFadeVariant] = useState(false);
 
   return (
     <>
       <div>
-        <SharedAxis axis={axis} step={step} className='container'>
+        <SharedAxis
+          axis={axis}
+          step={step}
+          fadeVariant={fadeVariant}
+          className='container'
+        >
           {steps}
         </SharedAxis>
       </div>
@@ -72,6 +78,16 @@ const App = () => {
             </button>
           ))}
         </div>
+      </div>
+      <div className='control-line gap-0.5'>
+        <button
+          className='small'
+          aria-pressed={fadeVariant}
+          onClick={() => setFadeVariant((prev) => !prev)}
+        >
+          {fadeVariant ? '✓' : ' '}
+        </button>
+        <span className='title'>Fade variant</span>
       </div>
     </>
   );
