@@ -7,19 +7,19 @@
 }
 
 .sharedAxis-item-enter-x-back {
-  transform: translate(-30px, 0);
+  transform: translateX(-30px);
 }
 
 .sharedAxis-item-enter-x-forward {
-  transform: translate(30px, 0);
+  transform: translateX(30px);
 }
 
 .sharedAxis-item-enter-y-back {
-  transform: translate(0, -30px);
+  transform: translateY(-30px);
 }
 
 .sharedAxis-item-enter-y-forward {
-  transform: translate(0, 30px);
+  transform: translateY(30px);
 }
 
 .sharedAxis-item-enter-active {
@@ -49,17 +49,17 @@
 }
 
 .sharedAxis-item-exit-active-x-forward {
-  transform: translate(-30px, 0);
+  transform: translateX(-30px);
 }
 
 .sharedAxis-item-exit-active-x-back {
-  transform: translate(30px, 0);
+  transform: translateX(30px);
 }
 
 .sharedAxis-item-exit-active-y-forward {
-  transform: translate(0, -30px);
+  transform: translateY(-30px);
 }
 
 .sharedAxis-item-exit-active-y-back {
-  transform: translate(0, 30px);
+  transform: translateY(30px);
 }

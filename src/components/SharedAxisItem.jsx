@@ -6,7 +6,7 @@ import classes from '../styles/SharedAxis.module.css';
 
 /**
  * @param {{
- *  axis: 'x' | 'y' | 'z';
+ *  axis: import('./SharedAxis').Axis;
  *  direction: 'back' | 'forward'
  *  in: boolean;
  *  children: import('react').ReactNode;

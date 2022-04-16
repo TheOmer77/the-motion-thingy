@@ -5,7 +5,8 @@
   --color-primary-text: #fff;
   --color-primary-shadow: rgba(41, 41, 214, 0.4);
   --color-primary-btn: rgba(41, 41, 214, 0.125);
-  --color-primary-btn-hover: rgba(41, 41, 214, 0.25);
+  --color-primary-btn-pressed: rgba(41, 41, 214, 0.25);
+  --color-primary-btn-hover: rgba(41, 41, 214, 0.325);
   --color-primary-btn-active: rgba(41, 41, 214, 0.5);
   --color-primary-btn-disabled: rgba(0, 0, 0, 0.125);
   --color-accent: #ac35e3;
@@ -58,14 +59,14 @@ body {
   height: 100%;
 }
 
-.counter {
+.control-line {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
 }
 
-.counter > .number {
+.control-line > .counter {
   font-weight: 500;
   width: 1rem;
   text-align: center;
@@ -83,6 +84,10 @@ button {
   background-color: var(--color-primary-btn);
 }
 
+button[aria-pressed='true']:not(:disabled) {
+  background-color: var(--color-primary-btn-pressed);
+}
+
 button:hover:not(:disabled) {
   background-color: var(--color-primary-btn-hover);
 }
@@ -96,6 +101,11 @@ button:disabled {
   color: var(--color-text);
 }
 
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.1875rem var(--color-primary);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #111;
@@ -105,7 +115,8 @@ button:disabled {
     --color-primary-shadow: rgba(148, 148, 235, 0.2);
     --color-primary-shadow-dark: rgba(20, 20, 108, 0.4);
     --color-primary-btn: rgba(148, 148, 235, 0.125);
-    --color-primary-btn-hover: rgba(148, 148, 235, 0.25);
+    --color-primary-btn-pressed: rgba(148, 148, 235, 0.25);
+    --color-primary-btn-hover: rgba(148, 148, 235, 0.325);
     --color-primary-btn-active: rgba(148, 148, 235, 0.5);
     --color-primary-btn-disabled: rgba(255, 255, 255, 0.125);
     --color-accent: hsl(281, 76%, 80%);

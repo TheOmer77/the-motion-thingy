@@ -6,9 +6,11 @@ import SharedAxisItem from './SharedAxisItem';
 
 import classes from '../styles/SharedAxis.module.css';
 
+/** @typedef {'x' | 'y' | 'z'} Axis */
+
 /**
  * @param {{
- *  axis: 'x' | 'y' | 'z';
+ *  axis: Axis;
  *  step: number;
  * } & import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>} props
  */
