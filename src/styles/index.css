@@ -1,6 +1,7 @@
 :root {
   --color-bg: #eee;
   --color-text: #222;
+  --color-text-disabled: rgba(34, 34, 34, 0.5);
   --color-primary: #2929d6;
   --color-primary-text: #fff;
   --color-primary-shadow: rgba(41, 41, 214, 0.4);
@@ -124,7 +125,7 @@ button:active:not(:disabled) {
 
 button:disabled {
   background-color: var(--color-primary-btn-disabled);
-  color: var(--color-text);
+  color: var(--color-text-disabled);
 }
 
 button:focus-visible {
@@ -150,6 +151,7 @@ button:focus-visible {
   :root {
     --color-bg: #111;
     --color-text: #ddd;
+    --color-text-disabled: rgba(221, 221, 221, 0.5);
     --color-primary: #9494eb;
     --color-primary-dark: #14146b;
     --color-primary-shadow: rgba(148, 148, 235, 0.2);
