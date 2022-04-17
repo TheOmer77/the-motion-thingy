@@ -48,7 +48,7 @@ const App = () => {
         <div className='control-line gap-0.5'>
           <button
             disabled={step <= 0}
-            onClick={() => setStep((prev) => prev - 1)}
+            onClick={() => setStep(prev => prev - 1)}
           >
             -
           </button>
@@ -65,7 +65,7 @@ const App = () => {
           </div>
           <button
             disabled={step >= steps.length - 1}
-            onClick={() => setStep((prev) => prev + 1)}
+            onClick={() => setStep(prev => prev + 1)}
           >
             +
           </button>
@@ -88,7 +88,7 @@ const App = () => {
           <button
             className='small'
             aria-pressed={fadeVariant}
-            onClick={() => setFadeVariant((prev) => !prev)}
+            onClick={() => setFadeVariant(prev => !prev)}
           >
             {fadeVariant ? '✓' : ' '}
           </button>
