@@ -6,11 +6,13 @@
   opacity: 0;
 }
 
-.sharedAxis-item-enter-x-back {
+.sharedAxis-item-enter-x-back,
+[dir='rtl'] .sharedAxis-item-enter-x-forward {
   transform: translateX(-30px);
 }
 
-.sharedAxis-item-enter-x-forward {
+.sharedAxis-item-enter-x-forward,
+[dir='rtl'] .sharedAxis-item-enter-x-back {
   transform: translateX(30px);
 }
 
@@ -30,11 +32,13 @@
   transform: scale(0.8);
 }
 
-.sharedAxis-item-enter-fade-back {
+.sharedAxis-item-enter-fade-back,
+[dir='rtl'] .sharedAxis-item-enter-fade-back {
   opacity: 1;
 }
 
-.sharedAxis-item-enter-active {
+.sharedAxis-item-enter-active,
+[dir='rtl'] .sharedAxis-item-enter-active {
   opacity: 1;
   transition: opacity 210ms cubic-bezier(0, 0, 0.2, 1) 90ms,
     transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -50,7 +54,8 @@
   transform: translate(0) scale(1);
 }
 
-.sharedAxis-item-exit-active {
+.sharedAxis-item-exit-active,
+[dir='rtl'] .sharedAxis-item-exit-active {
   opacity: 0;
   transition: opacity 90ms cubic-bezier(0.4, 0, 1, 1),
     transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,11 +65,13 @@
   left: 0;
 }
 
-.sharedAxis-item-exit-active-x-forward {
+.sharedAxis-item-exit-active-x-forward,
+[dir='rtl'] .sharedAxis-item-exit-active-x-back {
   transform: translateX(-30px);
 }
 
-.sharedAxis-item-exit-active-x-back {
+.sharedAxis-item-exit-active-x-back,
+[dir='rtl'] .sharedAxis-item-exit-active-x-forward {
   transform: translateX(30px);
 }
 
@@ -84,6 +91,7 @@
   transform: scale(0.8);
 }
 
-.sharedAxis-item-exit-active-fade-forward {
+.sharedAxis-item-exit-active-fade-forward,
+[dir='rtl'] .sharedAxis-item-exit-active-fade-forward {
   opacity: 1;
 }
