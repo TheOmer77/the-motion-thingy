@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import SharedAxis from './components/SharedAxis';
+import useRtl from './hooks/useRtl';
 import { Axis } from './types/SharedAxis';
 
 const steps = [...Array(5)].map((_, index) => (
@@ -18,7 +19,8 @@ const axisValues: { label: string; value: Axis }[] = [
 const App = () => {
   const [step, setStep] = useState(0),
     [axis, setAxis] = useState<Axis>('x'),
-    [fadeVariant, setFadeVariant] = useState(false);
+    [fadeVariant, setFadeVariant] = useState(false),
+    [rtl, setRtl] = useRtl();
 
   return (
     <>
@@ -81,6 +83,16 @@ const App = () => {
             {fadeVariant ? '✓' : ' '}
           </button>
           <span className='title'>Fade variant</span>
+        </div>
+        <div className='control-line gap-0.5'>
+          <button
+            className='small'
+            aria-pressed={rtl}
+            onClick={() => setRtl((prev: boolean) => !prev)}
+          >
+            {rtl ? '✓' : ' '}
+          </button>
+          <span className='title'>RTL</span>
         </div>
       </div>
     </>
