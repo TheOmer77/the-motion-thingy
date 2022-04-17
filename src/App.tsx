@@ -3,23 +3,11 @@ import { useState } from 'react';
 import SharedAxis from './components/SharedAxis';
 import { Axis } from './types/SharedAxis';
 
-const steps = [
-  <div key={0} className='item'>
-    0
-  </div>,
-  <div key={1} className='item'>
-    1
-  </div>,
-  <div key={2} className='item'>
-    2
-  </div>,
-  <div key={3} className='item'>
-    3
-  </div>,
-  <div key={4} className='item'>
-    4
-  </div>,
-];
+const steps = [...Array(5)].map((_, index) => (
+  <div key={index} className='item'>
+    {index}
+  </div>
+));
 
 const axisValues: { label: string; value: Axis }[] = [
   { label: 'X', value: 'x' },
