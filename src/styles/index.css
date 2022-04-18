@@ -39,6 +39,13 @@ body {
   text-align: center;
 }
 
+.container.linear-transitions {
+  --sharedAxis-transition-enter-opacity: 210ms linear 90ms;
+  --sharedAxis-transition-enter-transform: 300ms linear;
+  --sharedAxis-transition-exit-opacity: 210ms linear;
+  --sharedAxis-transition-exit-transform: 300ms linear;
+}
+
 .item {
   background: linear-gradient(
     0deg,

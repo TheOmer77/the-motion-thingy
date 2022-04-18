@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useState } from 'react';
 
 import SharedAxis from './components/SharedAxis';
@@ -20,20 +21,22 @@ const App = () => {
   const [step, setStep] = useState(0),
     [axis, setAxis] = useState<Axis>('x'),
     [fadeVariant, setFadeVariant] = useState(false),
+    [linearTransitions, setLinearTransitions] = useState(false),
     [rtl, setRtl] = useRtl();
 
   return (
     <>
-      <div>
-        <SharedAxis
-          axis={axis}
-          step={step}
-          fadeVariant={fadeVariant}
-          className='container'
-        >
-          {steps}
-        </SharedAxis>
-      </div>
+      <SharedAxis
+        axis={axis}
+        step={step}
+        fadeVariant={fadeVariant}
+        className={classNames(
+          'container',
+          linearTransitions && 'linear-transitions'
+        )}
+      >
+        {steps}
+      </SharedAxis>
       <div className='control-column'>
         <div className='control-line gap-0.5'>
           <button
@@ -87,8 +90,18 @@ const App = () => {
         <div className='control-line gap-0.5'>
           <button
             className='small'
+            aria-pressed={linearTransitions}
+            onClick={() => setLinearTransitions(prev => !prev)}
+          >
+            {linearTransitions ? '✓' : ' '}
+          </button>
+          <span className='title'>Linear transitions</span>
+        </div>
+        <div className='control-line gap-0.5'>
+          <button
+            className='small'
             aria-pressed={rtl}
-            onClick={() => setRtl((prev: boolean) => !prev)}
+            onClick={() => setRtl(prev => !prev)}
           >
             {rtl ? '✓' : ' '}
           </button>
