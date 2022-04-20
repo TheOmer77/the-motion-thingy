@@ -1,0 +1,101 @@
+body.sb-main-padded.sb-show-main,
+.sbdocs.sbdocs-preview .docs-story {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--font-family);
+  color: var(--color-text);
+}
+
+body.sb-main-padded.sb-show-main {
+  height: 100vh;
+}
+
+.sbdocs.sbdocs-preview,
+#docs-root .docs-story,
+#docs-root .sbdocs.sbdocs-preview .os-host,
+#docs-root .docblock-argstable-body {
+  box-shadow: none;
+  background-color: var(--color-card-bg);
+}
+
+#docs-root input {
+  accent-color: var(--color-primary);
+}
+
+#docs-root input[type='text'],
+#docs-root input[type='number'],
+#docs-root textarea {
+  box-shadow: var(--color-text-disabled) 0 0 0 1px;
+}
+
+#docs-root input[type='text']:focus,
+#docs-root input[type='number']:focus,
+#docs-root textarea:focus {
+  box-shadow: var(--color-primary) 0 0 0 2px;
+}
+
+#docs-root
+  .docblock-argstable-body
+  td
+  input[type='checkbox']:checked
+  ~ span:last-of-type,
+#docs-root
+  .docblock-argstable-body
+  td
+  input[type='checkbox']:not(:checked)
+  ~ span:first-of-type {
+  color: var(--color-primary);
+  background-color: var(--color-primary-btn);
+}
+
+#docs-root .docblock-argstable-body tr {
+  border-top-color: transparent;
+}
+
+#docs-root .sbdocs.sbdocs-preview .docs-story > div {
+  background-color: transparent;
+}
+
+#docs-root .sbdocs.sbdocs-preview button {
+  font-family: var(--font-family);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+#docs-root .sbdocs.sbdocs-preview button:focus {
+  box-shadow: none;
+}
+
+#docs-root .sbdocs.sbdocs-preview .os-content button {
+  padding: 0.5rem;
+}
+
+#docs-root .sbdocs.sbdocs-preview .os-content button:hover {
+  background-color: var(--color-primary-btn);
+}
+
+#docs-root .sbdocs.sbdocs-preview .os-content button:hover:active {
+  background-color: var(--color-primary-btn-hover);
+}
+
+#docs-root .sbdocs.sbdocs-preview .docs-story button {
+  color: var(--color-primary);
+  background-color: var(--color-primary-btn);
+}
+
+#docs-root .sbdocs.sbdocs-preview .docs-story button:hover {
+  background-color: var(--color-primary-btn-hover);
+}
+
+#docs-root .sbdocs.sbdocs-preview .docs-story button:active {
+  background-color: var(--color-primary-btn-active);
+}
+
+#docs-root .prismjs {
+  background-color: #333;
+}
