@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
 import classNames from 'classnames';
 
-import usePrevious from '../hooks/usePrevious';
-import SharedAxisContext from '../contexts/SharedAxisContext';
+import usePrevious from '../../hooks/usePrevious';
+import SharedAxisContext from '../../contexts/SharedAxisContext';
 import SharedAxisItem from './SharedAxisItem';
 
-import { SharedAxisProps } from '../types/SharedAxis';
+import { SharedAxisProps } from '../../types/SharedAxis';
 
-import classes from '../styles/SharedAxis.module.css';
+import classes from '../../styles/SharedAxis.module.css';
 
 const SharedAxis = ({
   step = 0,
@@ -47,3 +47,4 @@ const SharedAxis = ({
 };
 
 export default SharedAxis;
+export { SharedAxisItem };

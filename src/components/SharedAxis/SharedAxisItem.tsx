@@ -2,11 +2,11 @@ import { useRef, cloneElement, isValidElement } from 'react';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 
-import useSharedAxis from '../hooks/useSharedAxis';
+import useSharedAxis from '../../hooks/useSharedAxis';
 
-import { SharedAxisItemProps } from '../types/SharedAxis';
+import { SharedAxisItemProps } from '../../types/SharedAxis';
 
-import classes from '../styles/SharedAxis.module.css';
+import classes from '../../styles/SharedAxis.module.css';
 
 const SharedAxisItem = ({
   index,
