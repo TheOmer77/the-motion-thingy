@@ -40,7 +40,7 @@ const SharedAxisItem = ({
             classes[itemExitActiveFadeClassname as keyof typeof classes]
         ),
       }}
-      timeout={300}
+      timeout={300} // TODO: This shouldn't be hardcoded, grab it from CSS variable
       unmountOnExit
     >
       {isValidElement(children) && cloneElement(children, { ref })}
