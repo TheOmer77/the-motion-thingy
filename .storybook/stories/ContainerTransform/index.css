@@ -1,0 +1,70 @@
+.containerTransform.container {
+  width: calc(100vw - 8rem);
+  height: 100vh;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.containerTransform.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.containerTransform.listItem {
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  text-align: left;
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+}
+
+@media (hover: hover) {
+  .containerTransform.listItem:hover {
+    background-color: var(--color-primary-btn);
+    cursor: pointer;
+  }
+}
+
+.containerTransform.listItem:focus-visible {
+  background-color: var(--color-primary-btn-pressed);
+}
+
+.containerTransform.listItem:active {
+  background-color: var(--color-primary-btn-hover);
+  transition-duration: 25ms;
+}
+
+.containerTransform.listItem:focus {
+  outline: none;
+}
+
+.containerTransform.listItem .primaryText {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.containerTransform.listItem .secondaryText {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text-disabled);
+}
+
+.containerTransform.expandedComponent {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-app-content-bg);
+  color: var(--color-text);
+}

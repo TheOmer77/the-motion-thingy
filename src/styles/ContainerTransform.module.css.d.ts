@@ -1,0 +1,24 @@
+declare const styles: {
+  readonly root: string;
+  readonly 'transforming-container': string;
+  readonly 'transforming-container--collapsed': string;
+  readonly 'transforming-container--expanded': string;
+  readonly 'transforming-container--enter-active': string;
+  readonly 'transforming-container--exit': string;
+  readonly 'transforming-container--exit-active': string;
+  readonly 'transforming-container--transition': string;
+  readonly 'inner-container--collapsed--enter': string;
+  readonly 'inner-container--expanded--enter': string;
+  readonly 'inner-container--collapsed--enter-active': string;
+  readonly 'inner-container--expanded--enter-active': string;
+  readonly 'inner-container--collapsed--exit': string;
+  readonly 'inner-container--expanded--exit': string;
+  readonly 'inner-container--collapsed--exit-active': string;
+  readonly 'inner-container--expanded--exit-active': string;
+  readonly scrim: string;
+  readonly 'scrim--enter': string;
+  readonly 'scrim--enter-active': string;
+  readonly 'scrim--exit': string;
+  readonly 'scrim--exit-active': string;
+};
+export = styles;
