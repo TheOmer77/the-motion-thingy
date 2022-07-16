@@ -6,7 +6,7 @@ import { SharedAxisProps } from '../../../src/types/SharedAxis';
 import './index.css';
 
 const steps = [...Array(6)].map((_, index) => (
-  <div key={index} className='item'>
+  <div key={index} className='sharedAxis item'>
     {index}
   </div>
 ));
@@ -18,7 +18,7 @@ export default {
     step: 0,
     axis: 'x',
     fadeVariant: false,
-    className: 'container',
+    className: 'sharedAxis container',
     children: steps,
   },
   argTypes: {

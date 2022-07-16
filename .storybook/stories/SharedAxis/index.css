@@ -1,17 +1,17 @@
-.container {
+.sharedAxis.container {
   width: 10rem;
   height: 10rem;
   text-align: center;
 }
 
-.container.linear-transitions {
+.sharedAxis.container.linear-transitions {
   --sharedAxis-transition-enter-opacity: 210ms linear 90ms;
   --sharedAxis-transition-enter-transform: 300ms linear;
   --sharedAxis-transition-exit-opacity: 210ms linear;
   --sharedAxis-transition-exit-transform: 300ms linear;
 }
 
-.item {
+.sharedAxis.item {
   background: linear-gradient(
     0deg,
     var(--color-primary) 0%,
@@ -32,7 +32,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .item {
+  .sharedAxis.item {
     background: linear-gradient(
       0deg,
       var(--color-primary-dark) 0%,
