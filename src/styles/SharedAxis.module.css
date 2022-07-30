@@ -43,12 +43,13 @@
   transition: opacity
       var(
         --sharedAxis-transition-enter-opacity,
-        210ms cubic-bezier(0, 0, 0.2, 1) 90ms
+        calc(var(--timeout) * 0.7) cubic-bezier(0, 0, 0.2, 1)
+          calc(var(--timeout) * 0.3)
       ),
     transform
       var(
         --sharedAxis-transition-enter-transform,
-        300ms cubic-bezier(0.4, 0, 0.2, 1)
+        var(--timeout) cubic-bezier(0.4, 0, 0.2, 1)
       );
 
   position: absolute;
@@ -66,11 +67,14 @@
 [dir='rtl'] .sharedAxis-item-exit-active {
   opacity: 0;
   transition: opacity
-      var(--sharedAxis-transition-exit-opacity, 90ms cubic-bezier(0.4, 0, 1, 1)),
+      var(
+        --sharedAxis-transition-exit-opacity,
+        calc(var(--timeout) * 0.3) cubic-bezier(0.4, 0, 1, 1)
+      ),
     transform
       var(
         --sharedAxis-transition-exit-transform,
-        300ms cubic-bezier(0.4, 0, 0.2, 1)
+        var(--timeout) cubic-bezier(0.4, 0, 0.2, 1)
       );
 
   position: absolute;

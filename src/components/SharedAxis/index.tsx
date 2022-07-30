@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { CSSProperties, useCallback } from 'react';
 import classNames from 'classnames';
 
 import usePrevious from '../../hooks/usePrevious';
@@ -12,9 +12,11 @@ import classes from '../../styles/SharedAxis.module.css';
 const SharedAxis = ({
   step = 0,
   axis = 'x',
+  timeout = 300,
   fadeVariant = false,
   children,
   className,
+  style,
   ...props
 }: SharedAxisProps) => {
   const prevStep = usePrevious(step);
@@ -27,10 +29,11 @@ const SharedAxis = ({
   );
 
   return (
-    <SharedAxisContext.Provider value={{ step, axis, fadeVariant }}>
+    <SharedAxisContext.Provider value={{ step, axis, timeout, fadeVariant }}>
       <div
         {...props}
         className={classNames(classes['sharedAxis-container'], className)}
+        style={{ ...style, '--timeout': `${timeout}ms` } as CSSProperties}
       >
         {items.map((child, index) => (
           <SharedAxisItem

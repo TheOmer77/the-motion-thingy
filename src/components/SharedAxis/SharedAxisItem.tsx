@@ -11,9 +11,10 @@ import classes from '../../styles/SharedAxis.module.css';
 const SharedAxisItem = ({
   index,
   direction = 'forward',
+  timeout = 300,
   children,
 }: SharedAxisItemProps) => {
-  const { step, axis, fadeVariant } = useSharedAxis();
+  const { step, axis, timeout: groupTimeout, fadeVariant } = useSharedAxis();
   const ref = useRef(null);
 
   const itemEnterClassname = `sharedAxis-item-enter-${axis}-${direction}`,
@@ -40,10 +41,14 @@ const SharedAxisItem = ({
             classes[itemExitActiveFadeClassname as keyof typeof classes]
         ),
       }}
-      timeout={300} // TODO: This shouldn't be hardcoded, grab it from CSS variable
+      timeout={groupTimeout || timeout}
       unmountOnExit
     >
-      {isValidElement(children) && cloneElement(children, { ref })}
+      {isValidElement(children) &&
+        cloneElement(children, {
+          ref,
+          ...(groupTimeout ? {} : { style: { '--timeout': `${timeout}ms` } }),
+        })}
     </CSSTransition>
   );
 };
