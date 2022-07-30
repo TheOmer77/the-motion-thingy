@@ -17,6 +17,7 @@ export default {
   args: {
     step: 0,
     axis: 'x',
+    timeout: 300,
     fadeVariant: false,
     className: 'sharedAxis container',
     children: steps,
@@ -54,7 +55,7 @@ export const customTransitions = Template.bind({});
 customTransitions.storyName = 'Custom transitions';
 customTransitions.args = {
   axis: 'x',
-  className: 'container linear-transitions',
+  className: 'sharedAxis container linear-transitions',
 };
 
 export const rtl = (args: SharedAxisProps) => (

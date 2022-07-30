@@ -5,10 +5,11 @@
 }
 
 .sharedAxis.container.linear-transitions {
-  --sharedAxis-transition-enter-opacity: 210ms linear 90ms;
-  --sharedAxis-transition-enter-transform: 300ms linear;
-  --sharedAxis-transition-exit-opacity: 210ms linear;
-  --sharedAxis-transition-exit-transform: 300ms linear;
+  --sharedAxis-transition-enter-opacity: calc(var(--timeout) * 0.7) linear
+    calc(var(--timeout) * 0.3);
+  --sharedAxis-transition-enter-transform: var(--timeout) linear;
+  --sharedAxis-transition-exit-opacity: calc(var(--timeout) * 0.7) linear;
+  --sharedAxis-transition-exit-transform: var(--timeout) linear;
 }
 
 .sharedAxis.item {
