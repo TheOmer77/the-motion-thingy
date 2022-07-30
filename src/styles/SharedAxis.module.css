@@ -52,10 +52,14 @@
         var(--timeout) cubic-bezier(0.4, 0, 0.2, 1)
       );
 
+  transform: translate(0) scale(1);
+}
+
+.sharedAxis-container .sharedAxis-item-enter-active,
+[dir='rtl'] .sharedAxis-container .sharedAxis-item-enter-active {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(0) scale(1);
 }
 
 .sharedAxis-item-exit {
@@ -76,7 +80,10 @@
         --sharedAxis-transition-exit-transform,
         var(--timeout) cubic-bezier(0.4, 0, 0.2, 1)
       );
+}
 
+.sharedAxis-container .sharedAxis-item-exit-active,
+[dir='rtl'] .sharedAxis-container .sharedAxis-item-exit-active {
   position: absolute;
   top: 0;
   left: 0;
